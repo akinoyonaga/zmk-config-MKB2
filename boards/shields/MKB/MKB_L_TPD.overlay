@@ -41,21 +41,10 @@
 };
 
 / {
-    split_inputs_L {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_split_L: glidepoint_split_L@1 {
-            compatible = "zmk,input-split";
-            status = "okay";
-            device = <&glidepoint>;
-            reg = <1>;
-        };
-    };
-    glidepoint_listener_L: glidepoint_listener_L {
+    glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&glidepoint_split_L>;
+        device = <&glidepoint>;
         
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)

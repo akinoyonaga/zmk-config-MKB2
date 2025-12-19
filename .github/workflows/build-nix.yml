@@ -49,7 +49,6 @@ jobs:
   upload-firmware:
     needs: build
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -100,7 +99,6 @@ jobs:
   notify:
     needs: build
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: stegzilla/discord-notify@v2
         with:

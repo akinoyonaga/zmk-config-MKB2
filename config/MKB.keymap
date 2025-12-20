@@ -160,7 +160,7 @@
             quick-tap-ms = <200>;
         };
     };
-
+};
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -178,75 +178,101 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-
-        function_layer {
-            label = "Fnc";
+        mac_layer {
             bindings = <
-&kp GRAVE  &kp PG_UP  &kp UP     &kp PG_DN  &kp HOME   &trans         &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &trans
-&tog_ls    &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &trans         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &trans
-&trans     &kp BKSP   &kp DEL    &trans     &trans     &trans         &kp F11    &kp F12    &trans     &trans     &trans     &trans
-&trans     &trans     &kp LALT              &kp ENTER  &kp ENTER      &kp ENTER  &kp ENTER             &trans     &trans     &trans
+&kp TAB                           &kp Q                &kp W         &kp E               &kp R      &kp T        &kp Y             &kp U  &kp I                    &mt LEFT_ALT O  &kp P                &kp BACKSPACE
+&lt BT ESC                        &mt LEFT_COMMAND A   &kp S         &mt LEFT_SHIFT D    &kp F      &kp G        &kp H             &kp J  &mt RIGHT_SHIFT K        &kp L           &mt RIGHT_ALT MINUS  &kp SQT
+&kp LSHFT                         &kp Z                &kp X         &mt LEFT_COMMAND C  &kp V      &kp B        &kp N             &kp M  &mt RIGHT_COMMAND COMMA  &kp DOT         &kp SLASH            &kp FSLH
+&mt_exit_AML_on_tap LCTRL ESCAPE  &kp LEFT_WIN         &kp AT                            &lt 3 TAB  &lt 4 SPACE  &kp BACKSPACE     &lt 4 ENTER                     &kp trans       &lt 6 LC(SPACE)      &kp END
 &kp LEFT   &kp UP     &kp SPACE  &kp DOWN   &kp RIGHT                            &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
                                  &kp A                                                      &kp B
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
-        num_layer {
-            label = "Num";
+        layer_2 {
             bindings = <
-&kp CAPS         &kp N1         &kp N2     &kp N3    &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &trans
-&trans           &trans         &trans     &trans    &trans     &trans         &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &kp BSLH   &trans
-&mt LSHFT SPACE  &kp BACKSPACE  &kp DEL    &trans    &trans     &trans         &trans     &kp FSLH   &kp SEMI   &kp SQT    &trans     &trans
-&trans           &kp ENTER      &kp ENTER            &kp ENTER  &kp ENTER      &kp ENTER  &kp ENTER             &trans     &trans     &trans
-&kp LEFT         &kp UP         &kp SPACE  &kp DOWN  &kp RIGHT                            &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-                                           &kp A                                                     &kp B
+&kp trans                                      &kp EXCL                                       &kp DQT                                           &kp GRAVE                   &kp F2             &kp F5                               &kp LC(PAGE_UP)  &mkp MB4   &mkp MB3        &mkp MB5   &kp LC(PAGE_DOWN) &kp trans 
+&kp trans                                      &kp LEFT_PARENTHESIS                           &mt_exit_AML_on_tap LEFT_SHIFT RIGHT_PARENTHESIS  &kp LEFT_BRACKET            &kp RIGHT_BRACKET  &kp TILDE         &kp PAGE_UP      &mkp LCLK  &kp UP_ARROW    &mkp RCLK  &kp HOME &kp trans 
+&kp trans                                      &kp INT_YEN                                    &kp PIPE                                          &mt LEFT_CONTROL SEMICOLON  &kp COLON          &kp UNDERSCORE    &kp PAGE_DOWN    &kp LEFT   &kp DOWN_ARROW  &kp RIGHT  &kp END &kp trans 
+&mt_exit_AML_on_tap LEFT_CONTROL SINGLE_QUOTE  &kp LEFT_SHIFT                                 &kp LEFT_CONTROL            &to 0              &mo 1           &kp DELETE  &kp K_APP                                           &kp trans    &mo 6 &kp trans 
+&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                   &kp A                                                                       &kp B
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOLUME_DOWN>;
         };
 
-        mouse_layer {
-            label = "Mouse";
+        layer_3 {
             bindings = <
-&trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &trans     &trans     &trans     &trans
-&trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &trans     &trans     &trans     &trans
-&trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &mkp MB1   &mkp MB3   &mkp MB2   &trans
-&trans    &trans  &trans               &trans     &trans      &trans  &trans               &trans     &trans     &trans
-&kp LEFT  &kp UP  &kp SPACE  &kp DOWN  &kp RIGHT                      &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-                             &kp A                                              &kp B
+&kp trans &kp ESCAPE  &kp HASH        &kp DOLLAR            &kp PERCENT    &kp AMPERSAND                            &kp SLASH     &kp N7        &kp N8        &kp N9        &kp MINUS &kp trans 
+&kp trans &kp F7      &kp F8          &kp F9                &kp F10        &kp AT                 &kp ASTERISK  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS &kp trans 
+&kp trans &kp LA(F4)  &none           &kp LC(SEMICOLON)     &kp LC(COLON)  &kp UNDERSCORE         &kp F4        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL &kp trans 
+&kp LC(F4)  &kp LEFT_SHIFT  &kp LS(LEFT_CONTROL)  &to 0          &trans           &kp BACKSPACE  &kp N0                                                &kp trans   &kp DELETE &kp trans 
+&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                   &kp A                                                                       &kp B
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
-        scroll_layer {
-            label = "Scr";
+        layer_4 {
             bindings = <
-&trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &trans     &trans     &trans     &trans
-&trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &trans     &trans     &trans     &trans
-&trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &mkp MB1   &mkp MB3   &mkp MB2   &trans
-&trans    &trans  &trans               &trans     &trans      &trans  &trans               &trans     &trans     &trans
-&kp LEFT  &kp UP  &kp SPACE  &kp DOWN  &kp RIGHT                      &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-                             &kp A                                              &kp B
+&kp trans &kp EXCL                                       &kp DQT                                           &kp GRAVE                   &kp F2             &kp F5                               &kp LC(PAGE_UP)  &kp LG(LEFT_ARROW)  &mkp MB3        &kp LG(C_AL_FILE_BROWSER)  &kp LC(PAGE_DOWN) &kp trans 
+&kp trans &kp LEFT_PARENTHESIS                           &mt_exit_AML_on_tap LEFT_SHIFT RIGHT_PARENTHESIS  &kp LEFT_BRACKET            &kp RIGHT_BRACKET  &kp TILDE          &kp PAGE_UP      &mkp LCLK           &kp UP_ARROW    &mkp RCLK                  &kp HOME &kp trans 
+&kp trans &kp INT_YEN                                    &kp PIPE                                          &mt LEFT_CONTROL SEMICOLON  &kp COLON          &kp UNDERSCORE     &kp PAGE_DOWN    &kp LEFT            &kp DOWN_ARROW  &kp RIGHT                  &kp END &kp trans 
+&mt_exit_AML_on_tap LEFT_CONTROL SINGLE_QUOTE  &kp LEFT_SHIFT                                    &kp LEFT_CONTROL            &to 0              &mo 1           &kp DELETE  &kp K_APP                                                                   &kp trans     &mo 6 &kp trans 
+&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                   &kp A                                                                       &kp B
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOLUME_DOWN>;
         };
 
-        bt_layer {
-            label = "BT";
+        MOUSE {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_CLR_ALL  &trans    &trans     &trans     &trans     &trans
-&trans      &trans        &trans        &trans        &trans        &trans            &trans          &trans    &trans     &trans     &trans     &trans
-&trans      &trans        &trans        &trans        &trans        &trans            &trans          &trans    &trans     &trans     &trans     &trans
-&trans      &trans        &trans                      &trans        &trans            &trans          &trans               &trans     &trans     &trans
-&kp LEFT    &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                                       &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-                                        &kp A                                                                   &kp B
+&none &none  &none  &none  &none   &none                   &none  &none      &none  &none      &none &none 
+&none &none  &none  &none  &none   &none    &none  &mkp LCLK  &none  &mkp RCLK  &none &none 
+&none &none  &none  &none  &none   &none    &none  &none      &none  &none      &none &none 
+&none &none  &none  &none  &tog 0  &trans   &none  &none                     &none  &none  &none
+&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                   &kp A                                                                       &kp B
             >;
+        };
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        //        MOUSE {
+        //            bindings = <
+        //&trans  &trans  &trans  &trans  &trans                         &trans  &trans     &trans     &trans     &trans
+        //&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans
+        //&trans  &trans  &trans  &trans  &trans  &trans    &bootloader  &trans  &trans     &trans     &trans     &trans
+        //&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans                                   &trans
+        //            >;
+        //
+        //            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+        //        };
+
+        SCROLL {
+            bindings = <
+&none &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans &none 
+&none &trans  &trans  &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans &none 
+&none &trans  &trans  &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans &none 
+&trans  &trans  &trans  &tog 0  &trans  &trans    &trans  &trans                       &none    &trans &none 
+&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                   &kp A                                                                       &kp B
+            >;
+        };
+
+        BT {
+            bindings = <
+&none &bt0_win        &bt1_win  &bt2_mac  &bt3_mac  &bt4_win  &bt0_win  &bt1_win  &bt2_mac  &bt3_mac  &bt4_win &none 
+&none &none           &none     &none     &none     &none     &none     &none     &none     &none     &none &none 
+&none &bt BT_CLR      &none     &none     &none     &none     &none     &none     &none     &none     &bt BT_CLR &none 
+&bt BT_CLR_ALL  &none     &none     &tog 0    &trans    &mo 6    &none  &none                      &none              &bt BT_CLR_ALL &none 
+&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                   &kp A                                                                       &kp B
+            >;
         };
     };
 };
+
